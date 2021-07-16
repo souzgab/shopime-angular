@@ -1,0 +1,44 @@
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+}
+
+.example-full-width {
+    width: 100%;
+}
+
+td {
+    padding-right: 8px;
+}
+
+.example-card {
+    max-width: 400px;
+}
+
+.example-header-image {
+    background-image: url('https://images.unsplash.com/1/type-away.jpg');
+    background-size: cover;
+}
+
+.example-button {
+    margin-top: 16px;
+}
+  
+.tooltip-red {
+    background: #b71c1c;
+}
+
+.full-size {
+    height:100vh;
+}
+
+.img-main {
+    width: 200px;
+    height: 150px;
+    margin: 0 auto
+}

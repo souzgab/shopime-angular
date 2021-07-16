@@ -1,0 +1,99 @@
+<!-- <form class="example-form">
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Company (disabled)</mat-label>
+    <input matInput disabled value="Google">
+  </mat-form-field>
+
+  <table class="example-full-width" cellspacing="0"><tr>
+    <td><mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>First name</mat-label>
+      <input matInput>
+    </mat-form-field></td>
+    <td><mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Long Last Name That Will Be Truncated</mat-label>
+      <input matInput>
+    </mat-form-field></td>
+  </tr></table>
+
+  <p>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Address</mat-label>
+      <textarea matInput placeholder="Ex. 100 Main St">1600 Amphitheatre Pkwy</textarea>
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Address 2</mat-label>
+      <textarea matInput></textarea>
+    </mat-form-field>
+  </p>
+
+  <table class="example-full-width" cellspacing="0"><tr>
+    <td><mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>City</mat-label>
+      <input matInput placeholder="Ex. San Francisco">
+    </mat-form-field></td>
+    <td><mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>State</mat-label>
+      <input matInput placeholder="Ex. California">
+    </mat-form-field></td>
+    <td><mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Postal Code</mat-label>
+      <input matInput #postalCode maxlength="5" placeholder="Ex. 94105" value="94043">
+      <mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint>
+    </mat-form-field></td>
+  </tr></table>
+</form> -->
+<div class="container-fluid full-size d-inline-block align-items-center justify-content-center">
+  <div class="d-flex flex-direction-row">
+    <img src="../../../../assets/img/logo.png" alt="Shopime" class="img-main">
+  </div>
+  <div class="d-flex align-items-center justify-content-cente">
+    <form class="example-form h-75" [formGroup]="formCredentials" (ngSubmit)="onSubmit()">
+      <mat-card class="example-card m-2 h-75">
+        <mat-card-header class="d-flex align-items-center m-2">
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>Login</mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="mt-5">
+          <mat-form-field class="example-full-width" appearance="fill" [ngClass]="formCredentials.get('email')?.errors && 
+          (formCredentials.get('email')?.touched || formCredentials.get('email')?.dirty) ? 'has-error' : 'is-valid' ">
+            <mat-label>Email</mat-label>
+            <input type="email" matInput placeholder="email@email.com" formControlName="email">
+            <mat-icon #tooltip="matTooltip"
+                  *ngIf="formCredentials.get('email')?.errors?.required && 
+                  (formCredentials.get('email')!.touched || formCredentials.get('email')!.dirty)"
+                  matSuffix
+                  matTooltip="Email is required!"
+                  (click)="tooltip.toggle()"
+                  matTooltipPosition="left"
+                  matTooltipClass="tooltip-red"
+                  color="warn"
+                  >
+                  info
+            </mat-icon>
+          </mat-form-field>
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Password</mat-label>
+            <input type="password" matInput formControlName="password" placeholder="password">
+            <mat-icon #tooltip="matTooltip"
+                  *ngIf="formCredentials.get('password')?.errors?.required && 
+                  (formCredentials.get('password')!.touched || formCredentials.get('password')!.dirty)"
+                  matSuffix
+                  matTooltip="Password is required!"
+                  (click)="tooltip.toggle()"
+                  matTooltipPosition="left"
+                  matTooltipClass="tooltip-red"
+                  color="warn"
+                  >
+                  info
+            </mat-icon>
+          </mat-form-field>
+
+          <button mat-raised-button class="example-full-width mt-5" color="primary"> Quero me cadastrar </button>
+          <button mat-raised-button class="example-full-width mt-2" type="submit" [disabled]="!formCredentials.valid" color="accent">Login</button>
+        </mat-card-content>
+      </mat-card>
+    </form>
+  </div>
+</div>
+
+
