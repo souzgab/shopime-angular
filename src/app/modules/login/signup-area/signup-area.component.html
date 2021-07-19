@@ -1,0 +1,119 @@
+
+<div class="container-fluid full-size d-inline-block align-items-center justify-content-center w-100">
+    <div class="d-flex flex-direction-row">
+      <img src="../../../../assets/img/logo.png" alt="Shopime" class="img-main">
+    </div>
+    <div class="d-flex align-items-center justify-content-center w-100">
+        <form class="example-form d-flex flex-column"  [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+            <div class="d-flex flex-column">
+                <div class="d-flex flex-direction-row w-100">
+                    <mat-form-field class="w-50 mr-1" appearance="fill">
+                        <mat-label>First name</mat-label>
+                        <input matInput #firstName formControlName="firstName">
+                        <mat-hint align="end"
+                        class="mb-1"
+                        *ngIf="signupForm.get('firstName')!.errors?.required && 
+                        (signupForm.get('firstName')!.touched || signupForm.get('firstName')!.dirty)"
+                        >
+                            Digite seu primeiro nome!
+                        </mat-hint>
+                        <mat-hint align="end"
+                        class="mb-1"
+                        *ngIf="signupForm.get('firstName')!.errors?.minlength && 
+                        (signupForm.get('firstName')!.touched || signupForm.get('firstName')!.dirty)"
+                        >
+                            Tamanho minimo: {{firstName.value.length}}/3
+                        </mat-hint>
+                        <mat-icon matSuffix class="checked" *ngIf="signupForm.get('firstName')!.valid">
+                            checked
+                        </mat-icon>
+                    </mat-form-field>
+                    <mat-form-field class="w-50" appearance="fill">
+                        <mat-label>Last Name</mat-label>
+                        <input matInput #lastName formControlName="lastName">
+                        <mat-hint align="end"
+                        class="mb-1"
+                        *ngIf="signupForm.get('lastName')!.errors?.required && 
+                        (signupForm.get('lastName')!.touched || signupForm.get('lastName')!.dirty)"
+                        >
+                            Digite seu ultimo nome!
+                        </mat-hint>
+                        <mat-hint align="end"
+                        class="mb-1"
+                        *ngIf="signupForm.get('lastName')!.errors?.minlength && 
+                        (signupForm.get('lastName')!.touched || signupForm.get('lastName')!.dirty)"
+                        >
+                            Tamanho minimo: {{lastName.value.length}}/3
+                        </mat-hint>
+                        <mat-icon matSuffix class="checked" *ngIf="signupForm.get('lastName')!.valid">
+                            checked
+                        </mat-icon>
+                    </mat-form-field>
+                </div>
+                <div class="d-flex flex-direction-row mt-1">
+                    <mat-form-field class="w-100" appearance="fill">
+                        <mat-label>Email</mat-label>
+                        <input type="email" matInput placeholder="Ex. email@email.com" formControlName="email">
+                        <mat-hint align="end"
+                        class="mb-1"
+                        *ngIf="(signupForm.get('email')!.errors?.email || signupForm.get('email')!.errors?.required) && 
+                        (signupForm.get('email')!.touched || signupForm.get('email')!.dirty)"
+                        >
+                            Digite um email válido!
+                        </mat-hint>
+                        <mat-icon matSuffix class="checked" *ngIf="signupForm.get('email')!.valid">
+                            checked
+                        </mat-icon>
+                    </mat-form-field>
+                </div>
+                <div class="d-flex flex-direction-row mt-1">
+                    <mat-form-field class="w-100" appearance="fill" [color]="signupForm.valid ? 'is-valid' : 'has-error' ">
+                        <mat-label>Password</mat-label>
+                        <input type="password" #password matInput maxlength="8" formControlName="password">
+                        <mat-hint align="end"
+                        class="mb-1"
+                        *ngIf="signupForm.get('password')!.errors?.minlength && 
+                        (signupForm.get('password')!.touched || signupForm.get('password')!.dirty)"
+                        >
+                            Tamanho minimo: {{password.value.length}} / 8
+                        </mat-hint>
+                        <mat-icon matSuffix class="checked" *ngIf="signupForm.get('password')!.valid">
+                            checked
+                        </mat-icon>
+                        <mat-hint align="end" class="checked"
+                            *ngIf="signupForm.get('password')!.valid"
+                        >{{validate(password.value).length}} / 8</mat-hint>
+                    </mat-form-field>
+                </div>
+                <div class="d-flex flex-direction-row mt-1">
+                    <mat-form-field class="w-50 mr-1" appearance="fill">
+                        <mat-label>Phone Number</mat-label>
+                        <input matInput #phone
+                        placeholder="(00) 90000-0000"
+                        minlength="11"
+                        formControlName="phone"
+                        type="text" mask="(00) 00000-0000"
+                        >
+                        <!-- <span matPrefix class="m-1" *ngIf="phone.value.length > 0">+55</span> -->
+                        <mat-hint align="end" [ngClass] ='validate(phone.value).length === 11 ? "checked" : "" '>{{validate(phone.value).length}} / 11</mat-hint>
+                        <mat-icon matSuffix class="checked" *ngIf="signupForm.get('phone')!.valid">
+                            checked
+                        </mat-icon>
+                    </mat-form-field>
+                    <mat-form-field class="w-50" appearance="fill">
+                        <mat-label>CPF</mat-label>
+                        <input matInput #cpf minlength="11" placeholder="Ex. 44433322211" formControlName="document" mask="000.000.000-00">
+                        <mat-hint align="end" [ngClass] ='validate(cpf.value).length === 11 ? "checked" : "" ' >{{validate(cpf.value).length}} / 11</mat-hint>
+                        <mat-icon matSuffix class="checked" *ngIf="signupForm.get('document')!.valid">
+                            checked
+                        </mat-icon>
+                    </mat-form-field>
+                </div>
+            </div>
+            <button type="submit" [disabled]="!signupForm.valid" mat-raised-button class="w-75 mt-2 align-self-center" color="accent"> 
+                Cadastrar e Logar
+            </button>
+        </form>
+    </div>
+</div>
+

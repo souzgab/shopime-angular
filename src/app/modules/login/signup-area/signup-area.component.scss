@@ -1,8 +1,23 @@
+.tooltip-red {
+    background: #b71c1c;
+}
+
+.full-size {
+    height:100vh;
+}
+
+.img-main {
+    width: 200px;
+    height: 180px;
+    margin: 0 auto
+}
+
 .example-spacer {
     flex: 1 1 auto;
 }
 
 .example-form {
+    min-width: 150px;
     max-width: 500px;
     width: 100%;
 }
@@ -24,20 +39,6 @@ td {
     background-size: cover;
 }
 
-.example-button {
-    margin-top: 16px;
-}
-  
-.tooltip-red {
-    background: #b71c1c;
-}
-
-.full-size {
-    height:100vh;
-}
-
-.img-main {
-    width: 200px;
-    height: 180px;
-    margin: 0 auto
+.w-45 {
+    width: 45% !important;
 }

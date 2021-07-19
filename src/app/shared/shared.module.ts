@@ -8,12 +8,18 @@ import { MatCardModule } from '@angular/material/card';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatTooltipModule } from '@angular/material/tooltip'; 
 
+
+
+import { NgxMaskModule, IConfig } from 'ngx-mask'
+
+export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
+
 @NgModule({
   declarations: [
 
   ],
   imports: [
-    
+    NgxMaskModule.forRoot(options)
   ],
   exports: [
     CommonModule,

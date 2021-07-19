@@ -1,3 +1,4 @@
+import { UserService } from 'src/app/services/user.service';
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { User } from 'src/app/class/user';
@@ -13,7 +14,10 @@ export class LoginAreaComponent implements OnInit {
 
   formCredentials: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(
+    private formBuilder: FormBuilder,
+    private userService: UserService,
+  ) { }
 
   ngOnInit(): void {
     this.createForm({email: new User().email, password: new User().password})
@@ -28,5 +32,8 @@ export class LoginAreaComponent implements OnInit {
 
   onSubmit() {
     console.log(this.formCredentials.value)
+    this.userService.signIn(this.formCredentials.value).subscribe((response) => {
+      console.log(response)
+    })
   }
 }
