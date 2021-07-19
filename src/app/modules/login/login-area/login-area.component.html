@@ -10,10 +10,9 @@
           <mat-card-title>Login</mat-card-title>
         </mat-card-header>
         <mat-card-content class="mt-5">
-          <mat-form-field class="example-full-width" appearance="fill" [ngClass]="formCredentials.get('email')?.errors && 
-          (formCredentials.get('email')?.touched || formCredentials.get('email')?.dirty) ? 'has-error' : 'is-valid' ">
+          <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Email</mat-label>
-            <input type="email" matInput placeholder="email@email.com" formControlName="email">
+            <input #em type="email" matInput placeholder="email@email.com" formControlName="email">
             <mat-icon #tooltip="matTooltip"
                   *ngIf="formCredentials.get('email')?.errors?.required && 
                   (formCredentials.get('email')!.touched || formCredentials.get('email')!.dirty)"

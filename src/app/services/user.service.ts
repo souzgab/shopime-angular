@@ -37,9 +37,9 @@ export class UserService {
 
   private decodeAndNotify() {
       const token = this.tokenService.getToken();
-      const user = jwtDecode(token) as User;
-      this.user = user;
-      this.userSubject.next(user);
+      const user = jwtDecode(token) as any;
+      this.user = user.user as User;
+      this.userSubject.next(user.user as User);
   }
 
   logout() {
@@ -63,7 +63,6 @@ export class UserService {
     return this.http
     .post<User>(this.url.concat("/auth"), body)
     .pipe(tap(response => {
-      console.log(response)
       this.setToken(response.token);
     }))
   }
