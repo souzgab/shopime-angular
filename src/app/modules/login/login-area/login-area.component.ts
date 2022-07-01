@@ -2,7 +2,7 @@ import { Router } from '@angular/router';
 import { PlatformDetectorService } from './../../../services/platform.service';
 import { UserService } from 'src/app/services/user.service';
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild, ViewEncapsulation, ChangeDetectorRef } from '@angular/core';
-import { FormBuilder, Validators, FormGroup } from '@angular/forms';
+import { UntypedFormBuilder, Validators, UntypedFormGroup } from '@angular/forms';
 import { User } from 'src/app/shared/class/user';
 import { Credentials } from 'src/app/shared/interfaces/user';
 
@@ -13,12 +13,12 @@ import { Credentials } from 'src/app/shared/interfaces/user';
 })
 export class LoginAreaComponent implements OnInit, AfterViewInit {
 
-  formCredentials: FormGroup;
+  formCredentials: UntypedFormGroup;
 
   @ViewChild('em') emailInput: ElementRef<HTMLInputElement>;
 
   constructor(
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     private userService: UserService,
     private platformDetectorService: PlatformDetectorService,
     private cdr: ChangeDetectorRef,

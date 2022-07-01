@@ -1,5 +1,5 @@
 import { Role } from './../../../enum/role';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { User } from 'src/app/shared/class/user';
 import { UserService } from 'src/app/services/user.service';
@@ -13,11 +13,11 @@ import { Router } from '@angular/router';
 })
 export class SignupAreaComponent implements OnInit {
 
-  signupForm: FormGroup
+  signupForm: UntypedFormGroup
   user: User = new User()
 
   constructor(
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     private userService: UserService,
     private router: Router,
   ) { }
