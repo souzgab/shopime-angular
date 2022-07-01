@@ -3,8 +3,8 @@ import { PlatformDetectorService } from './../../../services/platform.service';
 import { UserService } from 'src/app/services/user.service';
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild, ViewEncapsulation, ChangeDetectorRef } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
-import { User } from 'src/app/class/user';
-import { Credentials } from 'src/app/interfaces/user';
+import { User } from 'src/app/shared/class/user';
+import { Credentials } from 'src/app/shared/interfaces/user';
 
 @Component({
   selector: 'app-login-area',

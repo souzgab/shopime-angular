@@ -3,7 +3,7 @@ import { Role } from './../../enum/role';
 import { CoreComponent } from './core.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AuthGuard } from 'src/app/security/auth.guard';
+import { AuthGuard } from 'src/app/shared/security/auth.guard';
 
 const routes: Routes = [
   {
