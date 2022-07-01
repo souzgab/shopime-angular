@@ -1,5 +1,5 @@
 {
-  "name": "shopime",
+  "name": "platform",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -10,16 +10,16 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "~12.0.1",
-    "@angular/cdk": "^12.1.2",
-    "@angular/common": "~12.0.1",
-    "@angular/compiler": "~12.0.1",
-    "@angular/core": "~12.0.1",
-    "@angular/forms": "~12.0.1",
-    "@angular/material": "^12.1.2",
-    "@angular/platform-browser": "~12.0.1",
-    "@angular/platform-browser-dynamic": "~12.0.1",
-    "@angular/router": "~12.0.1",
+    "@angular/animations": "~14.0.4",
+    "@angular/cdk": "^13.3.9",
+    "@angular/common": "~14.0.4",
+    "@angular/compiler": "~14.0.4",
+    "@angular/core": "~13.3.11",
+    "@angular/forms": "~14.0.4",
+    "@angular/material": "^13.3.9",
+    "@angular/platform-browser": "~14.0.4",
+    "@angular/platform-browser-dynamic": "~14.0.4",
+    "@angular/router": "~14.0.4",
     "bootstrap": "^5.0.2",
     "jwt-decode": "^3.1.2",
     "ngx-mask": "^12.0.0",
@@ -28,9 +28,9 @@
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~12.0.1",
-    "@angular/cli": "~12.0.1",
-    "@angular/compiler-cli": "~12.0.1",
+    "@angular-devkit/build-angular": "~13.3.8",
+    "@angular/cli": "~13.3.8",
+    "@angular/compiler-cli": "~14.0.4",
     "@types/jasmine": "~3.6.0",
     "@types/node": "^12.11.1",
     "jasmine-core": "~3.7.0",
@@ -39,6 +39,6 @@
     "karma-coverage": "~2.0.3",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "^1.5.0",
-    "typescript": "~4.2.3"
+    "typescript": "~4.6.4"
   }
 }

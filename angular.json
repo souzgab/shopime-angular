@@ -6,7 +6,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "shopime": {
+    "platform": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -23,7 +23,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/shopime",
+            "outputPath": "dist/platform",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -77,10 +77,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "shopime:build:production"
+              "browserTarget": "platform:build:production"
             },
             "development": {
-              "browserTarget": "shopime:build:development"
+              "browserTarget": "platform:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -88,7 +88,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "shopime:build"
+            "browserTarget": "platform:build"
           }
         },
         "test": {
@@ -113,5 +113,5 @@
       }
     }
   },
-  "defaultProject": "shopime"
+  "defaultProject": "platform"
 }
